@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget</title>
+    <link rel="stylesheet" href="dist/css/app.min.css">
+</head>
+
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-6 mx-auto mt-1 rounded shadow-lg p-3">
+                    <h5 class="text-light">Available Balance In <span class="yearAndMonth"></span></h5>
+                    <h3 id="totalBudget" class="text-light">0.00</h3>
+                    <div class="row mb-3">
+                        <div class="col">
+                            <div class="d-flex justify-content-between bg-primary p-3 rounded">
+                                <h4 class="text-light">INCOME</h4>
+                                <h4 id="totalIncome" class="text-light">+0.00</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="d-flex justify-content-between bg-danger p-3 rounded">
+                                <h4 class="text-light">EXPENSES</h4>
+                                <div class="d-flex">
+                                    <h5 id="totalExpense" class="text-light">-0.00</h5>
+                                    <h5><span id="totalExpensePercent" class="badge badge-light  ml-1">--</span></h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="inputSection bg-dark">
+        <div class="container">
+            <div class="row d-flex flex-column">
+                <div class="col-md-6 mx-auto pt-3">
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group col-md-3">
+                                <select id="budgetTypeSelect" class="form-control">
+                                    <option selected value="Income">Income</option>
+                                    <option value="Expense">Expense</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <input id="budgetDescription" type="text" class="form-control"
+                                    placeholder="Add Description">
+                                <div class="invalid-feedback">
+                                    Please Enter Description.
+                                </div>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <input id="budgetValue" type="number" class="form-control" placeholder="$0.00">
+                                <div class="invalid-feedback">
+                                    Please Enter Value.
+                                </div>
+                            </div>
+                            <div class="form-group col-md-1 text-center">
+                                <button id="fa-check-circle" class="btn btn-success">
+                                    <svg id="check" class="fa-check-circle">
+                                        <use pointer-events="all" xlink:href="dist/img/sprite.svg#icon-plus"></use>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+
+                </div>
+                <div class="col-md-6 mx-auto mb-2">
+                    <div class="updateDiv d-flex justify-content-around">
+                        <button id="updateBtn" class="btn btn-primary">&#9998; Update</button>
+                        <button id="delBtn" class="btn btn-danger">&#10005; Delete</button>
+                        <button id="backBtn" class="btn btn-secondary">&#8592; Back</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tableDiv">
+        <div class="container">
+            <div id="table-striped" class="row ">
+                <div class="col-md-6">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col" class="text-primary ">
+                                    <h4>INCOME</h4>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableIncome">
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-md-6">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col" class="text-danger">
+                                    <h4>EXPENSES</h4>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableExpense">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="dist/vendors/jquery/jquery.min.js"></script>
+    <script src="dist/vendors/popper/popper.min.js"></script>
+    <script src="dist/vendors/bootstrap/bootstrap.min.js"></script>
+    <script src="dist/js/app.js"></script>
+</body>
+
+</html>
